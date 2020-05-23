@@ -3,7 +3,8 @@
 This app specialize to capture fabelio product data such as item name, price, description, images and capture price every hour using cron job.
 
 ## Technology Stack
-Front-End : CSS, HTML, JS, Bootstrap Template customed by creative-tim.com  Back-End : PHP, Codeigniter Framework
+Front-End : CSS, HTML, JS, Bootstrap Template customed by creative-tim.com <br/>
+Back-End : PHP, Codeigniter Framework
 
 ## Installation - Local
 
