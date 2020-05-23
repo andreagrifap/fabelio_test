@@ -2,7 +2,7 @@
 
 This app specialize to capture fabelio product data such as item name, price, description, images and capture price every hour using cron job.
 
-# Technology Stack
+## Technology Stack
 Front-End : CSS, HTML, JS, Bootstrap Template customed by creative-tim.com
 Back-End : PHP, Codeigniter Framework
 
@@ -15,16 +15,111 @@ git clone https://github.com/andreagrifap/price_monitor_app.git
 composer update
 ```
 
-If you want to setup local mys
+If you want to setup local mysl database here is the mysql script :
+```mysql
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-## Usage
+--
+-- Database: `price_monitor`
+--
 
-```php
-import foobar
+-- --------------------------------------------------------
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+--
+-- Table structure for table `product_img`
+--
+
+CREATE TABLE `product_img` (
+  `id` int(10) NOT NULL,
+  `product_id` int(10) NOT NULL,
+  `img_url` varchar(250) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_link`
+--
+
+CREATE TABLE `product_link` (
+  `id` int(10) NOT NULL,
+  `url` varchar(250) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `description` text NOT NULL,
+  `slug` varchar(200) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT 1,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_price_history`
+--
+
+CREATE TABLE `product_price_history` (
+  `id` int(10) NOT NULL,
+  `product_id` int(10) NOT NULL,
+  `price` int(10) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `product_img`
+--
+ALTER TABLE `product_img`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_link`
+--
+ALTER TABLE `product_link`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_price_history`
+--
+ALTER TABLE `product_price_history`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `product_img`
+--
+ALTER TABLE `product_img`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_link`
+--
+ALTER TABLE `product_link`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_price_history`
+--
+ALTER TABLE `product_price_history`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+COMMIT;
+```
+
+## Unit Testing
+For unit testing this project use PHPUnit 9.1 . You can run the unit testing using CLI in directory application/tests/ using this command :
+```bash
+../../vendor/bin/phpunit
 ```
 
 ## Contributing
