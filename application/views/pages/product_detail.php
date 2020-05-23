@@ -4,6 +4,13 @@
   height:450px;
 }
 
+@media(max-width:768px){
+    .img-roll{
+        width:auto;
+        height:250px;
+    }
+}
+
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   filter: invert(1);
