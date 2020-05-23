@@ -86,16 +86,33 @@
 <div class="main-content" id="panel">
 
     <!-- Page content -->
-    <div class="container-fluid mt--6">
+    <div class="container-fluid mt-7">
 		<div class="row">
-		<div class="col-md-12" style="margin-top:200px">
-			<center>
-				<h1 style='font-size:40px'>404 Page Not Found</h1>
-				<a href="<?=config_item('base_url');?>" class="btn btn-primary">Home</a>
-			</center>
+			<div class="col">
+			<div class="card">
+				<!-- Light table -->
+				<div class="table-responsive mb-7 mt-7">
+				<center>
+					<h1 style='font-size:40px'>404 Page Not Found</h1>
+					<a href="<?=config_item('base_url');?>" class="btn btn-default mt-4">Home</a>
+				</center>
+				</div>
+			</div>
+			</div>
 		</div>
-		</div>
+
+		<!-- Footer -->
+		<footer class="footer pt-0 mt-6">
+			<div class="row align-items-center justify-content-lg-between">
+				<div class="col-lg-6">
+				<div class="copyright text-center  text-lg-left  text-muted">
+					&copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Andre Agrifa Pandiangan</a>
+				</div>
+				</div>
+			</div>
+		</footer>
   	</div>
+	  
 </div>
 
   <!-- Argon Scripts -->

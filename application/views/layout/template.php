@@ -31,6 +31,10 @@
   <link rel="stylesheet" href="<?=base_url();?>assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Argon CSS -->
   <link rel="stylesheet" href="<?=base_url();?>assets/css/argon.css?v=1.2.0" type="text/css">
+
+  <!-- Core -->
+  <script src="<?=base_url();?>assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="<?=base_url();?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -89,19 +93,13 @@
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
-          <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
+
+          <form class=" ml-auto" >
             <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-search"></i></span>
-                </div>
-                <input class="form-control" placeholder="Search" type="text">
-              </div>
+            <h6 class="h2 text-white d-inline-block mb-0">Fabelio Product Page Link Submission</h6>
             </div>
-            <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
           </form>
+          
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center  ml-md-auto ">
             <li class="nav-item d-xl-none">
@@ -121,31 +119,19 @@
     <!-- Header -->
 
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header bg-primary pb-5">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-              <h6 class="h2 text-white d-inline-block mb-0">Link Submission</h6>
-              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+              <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
                 <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                  <li class="breadcrumb-item"><a href="#">Price Monitor</a></li>
+                  <li class="breadcrumb-item"><a href="<?=base_url('main/link_list');?>"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="<?=base_url('main/link_list');?>">Price Monitor</a></li>
                   <li class="breadcrumb-item active" aria-current="page"><?php if(!empty($page)){echo $page;}else{echo "default";} ?></li>
                 </ol>
               </nav>
             </div>
-
-            <?php if($module!="link_list"){ ?>
-                <div class="col-lg-6 col-5 text-right">
-                    <a href="<?=base_url('main/link_list');?>" class="btn btn btn-neutral">All Links <i class="fa fa-chevron-right"></i></a>
-                </div>
-            <?php }else{ ?>
-                <div class="col-lg-6 col-5 text-right">
-                    <a href="<?=base_url('main/link_submission');?>" class="btn btn btn-neutral"><i class="fa fa-plus fa-fw"></i> Add New Product Link</a>
-                </div>
-            <?php } ?>
-
           </div>
         </div>
       </div>
@@ -153,7 +139,19 @@
     <!-- Page content -->
     <div class="container-fluid mt--6">
 
-        <?php $this->load->view($content); ?>
+      <?php if(!empty($_SESSION['success'])){ ?>
+        <div class="alert alert-success" role="alert">
+            <?=$_SESSION['success'];?>
+        </div>
+      <?php } ?>
+
+      <?php if(!empty($_SESSION['error'])){ ?>
+        <div class="alert alert-danger" role="alert">
+            <?=$_SESSION['error'];?>
+        </div>
+      <?php } ?>
+
+      <?php $this->load->view($content); ?>
     
       <!-- Footer -->
       <footer class="footer pt-0 mt-6">
@@ -163,22 +161,12 @@
               &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Andre Agrifa Pandiangan</a>
             </div>
           </div>
-          <div class="col-lg-6">
-            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-              <li class="nav-item">
-                <a href="https://github.com/andreagrifap/fabelio_test" class="nav-link" target="_blank">Documentation</a>
-              </li>
-            </ul>
-          </div>
         </div>
       </footer>
     </div>
   </div>
 
   <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="<?=base_url();?>assets/vendor/jquery/dist/jquery.min.js"></script>
-  <script src="<?=base_url();?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?=base_url();?>assets/vendor/js-cookie/js.cookie.js"></script>
   <script src="<?=base_url();?>assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="<?=base_url();?>assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>

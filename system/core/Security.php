@@ -295,7 +295,12 @@ class CI_Security {
 	 */
 	public function csrf_show_error()
 	{
-		show_error('The action you have requested is not allowed.', 403);
+		$arr = [
+			"status"=>"Error",
+			"message"=>"Action not allowed"
+		];
+		echo json_encode($arr);
+		die();
 	}
 
 	// --------------------------------------------------------------------
