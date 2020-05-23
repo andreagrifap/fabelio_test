@@ -40,7 +40,7 @@ class Main extends CI_Controller {
         }
 
         $imgs = $this->m_global->get("product_img",["product_id"=>$getProduct->row()->id]);
-        $priceHistory = $this->m_global->get("product_price_history",["product_id"=>$getProduct->row()->id]);
+        $priceHistory = $this->m_global->get("product_price_history",["product_id"=>$getProduct->row()->id],['created_at','DESC']);
         $data = [
           "content" => "pages/product_detail",
           "module" => "product_detail",
@@ -48,13 +48,12 @@ class Main extends CI_Controller {
           "item" => $getProduct->row(),
           "imgs" => $imgs,
           "priceHistory" => $priceHistory
-
         ];
         $this->load->view('layout/template',$data);
     }
 
     public function remove($product_id = null){
-        $getProduct = $this->m_global->get("product_link",["id"=>$product_id]);
+        $getProduct = $this->m_global->get("product_link");
         if(!$getProduct){
           $this->session->set_flashdata("error","Remove product failed. Product not found");
           redirect('main/link_list');
