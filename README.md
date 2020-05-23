@@ -15,7 +15,9 @@ git clone https://github.com/andreagrifap/price_monitor_app.git
 composer update
 ```
 
-If you want to setup local mysl database here is the mysql script :
+## Installation - Mysql Database
+Run this sql script :
+
 ```mysql
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
