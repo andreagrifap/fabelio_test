@@ -118,6 +118,9 @@ ALTER TABLE `product_price_history`
 COMMIT;
 ```
 
+## Cron Job - Price History
+The price history is stored every hour through cron job function located on controller **Cron/getPriceScrape**
+
 ## Unit Testing
 For unit testing this project use PHPUnit 9.1 . You can run the unit testing using CLI in directory **application/tests/** using this command :
 ```bash
