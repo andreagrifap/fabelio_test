@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'price_monitor',
+	'hostname' => 'us-cdbr-east-06.cleardb.net/heroku_2b18b3f24721b8f?',
+	'username' => 'b898e99849b233',
+	'password' => '37ad6d28',
+	'database' => 'heroku_2b18b3f24721b8f',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
