@@ -10,7 +10,7 @@ class Cron extends CI_Controller {
 
     public function getPriceScrape(){
 
-        $url = $this->m_global->get("product_link",null);
+        $url = $this->m_global->get("product_link",['status'=>1]);
         
         foreach($url as $item){
             $price = 0;
