@@ -3,8 +3,8 @@
 This app specialize to capture fabelio product data such as item name, price, description, images and capture price every hour using cron job.
 
 ## Technology Stack
-Front-End : CSS, HTML, JS, Bootstrap Template customed by creative-tim.com <br/>
-Back-End : PHP, Codeigniter Framework
+Front-End : CSS, HTML, JS, Bootstrap Template customized by [creative-tim.com](https://www.creative-tim.com/product/argon-dashboard) <br/>
+Back-End : PHP 7.3, Codeigniter Framework
 
 ## Installation - Local
 
@@ -117,7 +117,7 @@ COMMIT;
 ```
 
 ## Unit Testing
-For unit testing this project use PHPUnit 9.1 . You can run the unit testing using CLI in directory application/tests/ using this command :
+For unit testing this project use PHPUnit 9.1 . You can run the unit testing using CLI in directory **application/tests/** using this command :
 ```bash
 ../../vendor/bin/phpunit
 ```
