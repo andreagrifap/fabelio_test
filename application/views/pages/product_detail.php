@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<?=base_url();?>assets/css/jquery.dataTables.min.css">
 <style>
 .img-roll{
   width:auto;
@@ -110,3 +111,11 @@
       </div>
     </div>
 </div>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".table").DataTable({
+        "lengthMenu" : [[5,10,25,50,-1],[5,10,25,50,"All"]]
+    });
+});
+</script>
