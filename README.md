@@ -2,6 +2,9 @@
 
 This app specialize to capture fabelio product data such as item name, price, description, images and capture price every hour using cron job.
 
+## Demo
+[Link to Demo](https://pricemonitorandre.herokuapp.com/) 
+
 ## Technology Stack
 Front-End : CSS, HTML, JS, Bootstrap Template customized by [creative-tim.com](https://www.creative-tim.com/product/argon-dashboard) <br/>
 Back-End : PHP 7.3, Codeigniter Framework
